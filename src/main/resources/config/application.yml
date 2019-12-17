@@ -1,0 +1,20 @@
+# spring
+spring:
+  session:
+    store-type: none
+  # profiles
+  profiles:
+    active: dev
+# log
+logging:
+  config: classpath:config/logback-spring.xml
+  level:
+    root: info
+    com.mdm.dataimport: info
+# mybatis plus
+mybatis-plus:
+  type-aliases-package: com.mdm.dataimport.entity,com.mdm.dataimport.model.*
+  mapper-locations: classpath:mappers/*Mapper.xml
+
+server:
+  port: 8899

@@ -1,4 +1,4 @@
-package com.boostrdev.weblogic.legacy.model.po;
+package com.mdm.dataimport.model.po;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelTarget;

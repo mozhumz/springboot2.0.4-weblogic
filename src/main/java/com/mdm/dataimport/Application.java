@@ -1,12 +1,10 @@
-package com.boostrdev.weblogic.legacy;
+package com.mdm.dataimport;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 
 //Tell Spring to automatically inject any dependencies that are marked in
@@ -16,18 +14,18 @@ import org.springframework.web.WebApplicationInitializer;
 //// application
 //@Configuration
 //// SpringBootWebLogicLegacyApplication is a SpringBootServletInitializer subclass and override its configure method.
-//@ComponentScan
+@MapperScan("com.mdm.dataimport.mapper")
 @SpringBootApplication
-public class SpringBootWebLogicLegacyApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
+public class Application extends SpringBootServletInitializer implements WebApplicationInitializer {
 
 	// Tell Spring to launch our app!
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootWebLogicLegacyApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(SpringBootWebLogicLegacyApplication.class);
+		return builder.sources(Application.class);
 	}
 
 }
